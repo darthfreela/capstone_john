@@ -23,3 +23,37 @@ services:
       - MONGO_HOST=mongo:27017
       - GMAPS_GEOCODE_KEY
       - GMAPS_JSMAPS_KEY
+  rake:
+    build: .
+    command: docker/docker-rake-commands.sh
+    volumes:
+      - .:/myapp
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres
+      - mongo
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_HOST=postgres
+      - POSTGRES_PASSWORD
+      - MONGO_HOST=mongo:27017
+      - GMAPS_GEOCODE_KEY
+      - GMAPS_JSMAPS_KEY
+  test:
+    build: .
+    command: docker/docker-test-commands.sh
+    volumes:
+      - .:/myapp
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres
+      - mongo
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_HOST=postgres
+      - POSTGRES_PASSWORD
+      - MONGO_HOST=mongo:27017
+      - GMAPS_GEOCODE_KEY
+      - GMAPS_JSMAPS_KEY
