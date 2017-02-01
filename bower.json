@@ -1,0 +1,21 @@
+{
+  "name": "capston_rails",
+  "description": "",
+  "main": "index.js",
+  "license": "ISC",
+  "homepage": "https://github.com/darthfreela/capstone_john",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery2": "^2.0.0",
+    "bootstrap-sass": "^3.3.7",
+    "angular": "^1.6.1",
+    "angular-ui-router": "^0.4.2",
+    "angular-resource": "^1.6.1"
+  }
+}
